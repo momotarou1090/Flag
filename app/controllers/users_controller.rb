@@ -1,0 +1,30 @@
+class UsersController < ApplicationController
+  def follow
+    user = User.find(params[:id])
+    current_user.follow(user)
+    redirect_to user_path(user)
+  end
+  
+  def unfollow
+    user = User.find(params[:id])
+    current_user.unfollow(user)
+    redirect_to user_path(user)
+  end
+  
+  def show
+    @user = User.find(params[:id])
+    @tweets = @user.tweets.order("created_at DESC")
+  end
+  
+  def following
+    @user = User.find(params[:id])
+    @users = @user.following
+    render 'show_follow'
+  end
+
+  def followers
+    @user = User.find(params[:id])
+    @users = @user.followers
+    render 'show_follow'
+  end
+end

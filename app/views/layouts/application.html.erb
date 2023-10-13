@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flag</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if user_signed_in? %>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+      <%= link_to "みんなの投稿", tweets_path %>
+      <%= link_to "投稿する", new_tweet_path %>
+      <%= link_to "マイプロフィール", user_path(current_user) %> <!-- これが追加される部分 -->
+    <% else %>
+      <%= link_to "Sign Up", new_user_registration_path %>
+      <%= link_to "Login", new_user_session_path %>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

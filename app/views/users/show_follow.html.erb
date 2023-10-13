@@ -1,0 +1,12 @@
+<% @title = @user == current_user ? "You are" : @user.name + " is" %>
+<% @title += action_name == "following" ? " following" : "'s followers" %>
+
+<h2><%= @title %></h2>
+
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <%= link_to user.name, user %>
+    </li>
+  <% end %>
+</ul>
