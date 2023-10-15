@@ -60,3 +60,5 @@ gem 'devise'
 gem "ruby-openai"
 
 gem 'dotenv-rails'
+
+gem 'kaminari'
