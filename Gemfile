@@ -62,3 +62,8 @@ gem "ruby-openai"
 gem 'dotenv-rails'
 
 gem 'kaminari'
+
+group :production do
+  gem 'mysql2'
+  gem 'unicorn', '>= 5.5.0' 
+end
