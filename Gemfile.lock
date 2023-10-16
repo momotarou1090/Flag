@@ -221,7 +221,6 @@ GEM
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
     semantic_range (3.0.0)
-    spring (4.1.1)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -284,7 +283,6 @@ DEPENDENCIES
   ruby-openai
   sass-rails (>= 6)
   selenium-webdriver (>= 4.0.0.rc1)
-  spring
   sqlite3 (~> 1.4)
   turbolinks (~> 5)
   tzinfo-data
