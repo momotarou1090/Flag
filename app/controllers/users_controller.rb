@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    @tweets = @user.tweets.order("created_at DESC")
+    @tweets = Tweet.includes(:user, image_attachment: :blob).order("created_at DESC").page(params[:page]).per(20)
   end
   
   def following

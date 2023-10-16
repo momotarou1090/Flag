@@ -1,3 +1,4 @@
+
 <div class="tweet">
   <% @tweets.each do |tweet| %>
     <p><%= link_to tweet.user.name, user_path(tweet.user) %></p> <!-- この行を更新 -->
