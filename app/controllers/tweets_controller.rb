@@ -34,9 +34,16 @@ class TweetsController < ApplicationController
       )
       # GPTからの応答を解析し、評価を抽出します
       response_content = response.dig("choices", 0, "message", "content").strip
-      response_content = response_content.strip if response_content
       Rails.logger.info "GPT-3 Response for category #{category}: #{response_content}"
-
+      if response_content
+        response_content = response_content.strip
+        Rails.logger.info "GPT-3 Response for category #{category}: #{response_content}"
+      else
+        # response_contentがnilの場合の処理をここに記述します。
+        # 例えば、ログにエラーメッセージを記録したり、デフォルト値を設定したりすることができます。
+        Rails.logger.error "No content received from GPT-3 for category #{category}."
+        # 必要に応じて、ここで適切なデフォルト値やエラー処理を行うことができます。
+      end
     # JSONの解析を試み、問題がある場合は例外をスローします
     begin
       response_json = JSON.parse(response_content)
