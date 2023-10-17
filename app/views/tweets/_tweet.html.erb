@@ -5,4 +5,5 @@
   <% if tweet.image.attached? %>
     <%= image_tag tweet.image %>
   <% end %>
+  <%= link_to '削除', tweet, method: :delete, data: { confirm: '本当に削除しますか？' } %>
 </div>

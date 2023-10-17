@@ -11,6 +11,12 @@ class TweetsController < ApplicationController
   def new
     @tweet = Tweet.new
   end
+
+  def destroy
+    @tweet = Tweet.find(params[:id])
+    @tweet.destroy
+    redirect_to tweets_url, notice: 'ツイートが削除されました'
+  end
   
   def create
     original_content = tweet_params[:content]
