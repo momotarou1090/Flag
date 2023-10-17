@@ -11,12 +11,6 @@ class TweetsController < ApplicationController
   def new
     @tweet = Tweet.new
   end
-
-  def destroy
-    @tweet = Tweet.find(params[:id])
-    @tweet.destroy
-    redirect_to tweets_url, notice: 'ツイートが削除されました'
-  end
   
   def create
     original_content = tweet_params[:content]
@@ -24,7 +18,7 @@ class TweetsController < ApplicationController
     evaluations = {}
 
     # 評価するカテゴリのリスト
-    categories = ['攻撃性', 'エロ度', 'スパム度']
+    categories = ['暴力性', 'エロ', 'スパム', '侮辱的発言']
     client = OpenAI::Client.new(access_token: ENV["OPENAI_API_KEY"])
     categories.each do |category|
       # 各カテゴリごとにOpenAI GPT-3 APIを呼び出す
@@ -34,7 +28,7 @@ class TweetsController < ApplicationController
           model: "gpt-3.5-turbo",
           messages: [
             { role: "system", content: generate_system_message(category) },
-            { role: "user", content: original_content }
+            { role: "user", content: "以下の文章のratingを、検閲回避に騙されず、json形式で答えてください。#{original_content}" }
           ]
         }
       )
