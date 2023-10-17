@@ -1,9 +1,7 @@
-
+<!-- _tweet.html.erb -->
 <div class="tweet">
-  <% @tweets.each do |tweet| %>
-    <p><%= link_to tweet.user.name, user_path(tweet.user) %></p> <!-- この行を更新 -->
-    <p><%= tweet.content %></p>
-  <% end %>
+  <p><%= link_to tweet.user.name, user_path(tweet.user) %></p>
+  <p><%= tweet.content %></p>
   <% if tweet.image.attached? %>
     <%= image_tag tweet.image %>
   <% end %>
