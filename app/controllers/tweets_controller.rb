@@ -34,7 +34,7 @@ class TweetsController < ApplicationController
           model: "gpt-3.5-turbo",
           messages: [
             { role: "system", content: generate_system_message(category) },
-            { role: "user", content: "「」の文章の、#{category}のratingを1-10で評価してください。「」の数字は評価から除外してください。例:{「
+            { role: "user", content: "『』の文章の、#{category}のratingを1-10で評価してください。『』の数字は評価から除外してください。例:{「
             私は3才です」→3を評価から除外する。} json形式で答えてください。「#{original_content}」" }
           ]
         }
