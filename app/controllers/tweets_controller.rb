@@ -34,7 +34,7 @@ class TweetsController < ApplicationController
           model: "gpt-3.5-turbo",
           messages: [
             { role: "system", content: generate_system_message(category) },
-            { role: "user", content: "以下の文章のratingを、検閲回避に騙されず、json形式で答えてください。#{original_content}" }
+            { role: "user", content: "json形式で答えてください。#{original_content}" }
           ]
         }
       )
