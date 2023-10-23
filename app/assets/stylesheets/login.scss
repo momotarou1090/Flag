@@ -19,7 +19,7 @@
   border-radius: 0; /* 角の丸みをなくす */
   background-color: transparent; /* 背景を透明に */
   border: none; /* 枠線をなくす */
-  border-bottom: 1px solid #000000; /* 下線のみを表示 */
+  border-bottom: 5px solid #000000; /* 下線のみを表示 */
   outline: none; /* クリックしたときの枠線をなくす */
   padding: 8px 0; /* パディングでテキスト位置を調整 */
   margin: 8px 0; /* 余白を設定 */
@@ -30,7 +30,7 @@
 
 /* 入力フィールドがフォーカスされたときのスタイル */
 .transparent-input:focus {
-  border-bottom: 2px solid #555555; /* フォーカス時の下線を強調 */
+  border-bottom: 5px solid #555555; /* フォーカス時の下線を強調 */
 }
 
 /* プレースホルダテキストのスタイル（オプション）*/
