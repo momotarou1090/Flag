@@ -30,11 +30,17 @@
 
 /* 入力フィールドがフォーカスされたときのスタイル */
 .transparent-input:focus {
+  -webkit-appearance: none; /* iOSでのデフォルトスタイルをオフにする */
+  -moz-appearance: none; /* Firefoxでのスタイルをリセット */
+  appearance: none; /* 標準のスタイルをリセット */
   border-bottom: 5px solid #555555; /* フォーカス時の下線を強調 */
 }
 
 /* プレースホルダテキストのスタイル（オプション）*/
 .transparent-input::placeholder {
+  -webkit-appearance: none; /* iOSでのデフォルトスタイルをオフにする */
+  -moz-appearance: none; /* Firefoxでのスタイルをリセット */
+  appearance: none; /* 標準のスタイルをリセット */
   color: #a9a9a9; /* プレースホルダテキストの色を設定 */
 }
 
