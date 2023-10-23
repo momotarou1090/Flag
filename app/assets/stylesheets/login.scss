@@ -16,12 +16,16 @@
 }
 /* フォームの入力フィールド全体に適用されるスタイル */
 .transparent-input {
+  border-radius: 0; /* 角の丸みをなくす */
   background-color: transparent; /* 背景を透明に */
   border: none; /* 枠線をなくす */
   border-bottom: 1px solid #000000; /* 下線のみを表示 */
   outline: none; /* クリックしたときの枠線をなくす */
   padding: 8px 0; /* パディングでテキスト位置を調整 */
   margin: 8px 0; /* 余白を設定 */
+  -webkit-appearance: none; /* iOSでのデフォルトスタイルをオフにする */
+  -moz-appearance: none; /* Firefoxでのスタイルをリセット */
+  appearance: none; /* 標準のスタイルをリセット */
 }
 
 /* 入力フィールドがフォーカスされたときのスタイル */
