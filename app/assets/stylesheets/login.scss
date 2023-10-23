@@ -1,0 +1,104 @@
+.login-container {
+  /* これにより、子要素を縦と横の中央に配置できます。 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* これはビューポートの高さに基づいています。必要に応じて調整してください。 */
+  flex-direction: column; /* 子要素を垂直方向に並べます。 */
+}
+.logo {
+  text-align: center; /* ロゴを中央に配置 */ /* フォームとの間にスペースを追加 */
+}
+
+.logo img {
+  width: 200px; /* 必要に応じてロゴのサイズを調整 */
+  /* その他のスタイリングプロパティ */
+}
+/* フォームの入力フィールド全体に適用されるスタイル */
+.transparent-input {
+  background-color: transparent; /* 背景を透明に */
+  border: none; /* 枠線をなくす */
+  border-bottom: 1px solid #000000; /* 下線のみを表示 */
+  outline: none; /* クリックしたときの枠線をなくす */
+  padding: 8px 0; /* パディングでテキスト位置を調整 */
+  margin: 8px 0; /* 余白を設定 */
+}
+
+/* 入力フィールドがフォーカスされたときのスタイル */
+.transparent-input:focus {
+  border-bottom: 2px solid #555555; /* フォーカス時の下線を強調 */
+}
+
+/* プレースホルダテキストのスタイル（オプション）*/
+.transparent-input::placeholder {
+  color: #a9a9a9; /* プレースホルダテキストの色を設定 */
+}
+
+.field {
+  position: relative; /* 子要素の位置を調整するため、positionをrelativeに設定 */
+  margin-bottom: 20px; /* フィールド間のスペース */
+}
+
+/* ラベルのスタイル調整 */
+.field label {
+  position: absolute; /* アンダーラインの上に表示するため、positionをabsoluteに設定 */
+  bottom: 0; /* 下に揃える */
+  left: 0; /* 左に揃える */
+  margin-bottom: 5px; /* 必要に応じて、アンダーラインとの間にスペースを設ける */
+  font-size: 1.0em; /* フォントサイズを小さくする（必要に応じて調整） */
+  color: #333; /* ラベルのテキスト色 */
+  background-color: transparent; /* ラベルの背景を透明に */
+  pointer-events: none; /* ラベルをクリックしても入力フィールドに影響しないようにする */
+}
+
+/* 入力フィールドのスタイル調整 */
+.transparent-input {
+  /* 以前のスタイルを維持しつつ、必要に応じてここに追加のスタイルを適用 */
+  width: 100%; /* 入力フィールドをフィールドの幅いっぱいに広げる */
+  padding-top: 10px; /* ラベルと入力テキストの間にスペースを設ける */
+}
+
+/* ラベルを隠すスタイル（透明）*/
+.field input:focus + label,
+.field input:not(:placeholder-shown) + label {
+  opacity: 0; /* 透明度を0にしてラベルを見えなくする */
+  /* 他のスタイル変更もここで適用できます（例: 上に移動するアニメーションなど） */
+}
+
+.field input {
+  width: 100%; /* 望む幅に調整してください。 */
+  margin-bottom: 3px; /* 入力フィールド間のスペース */
+  /* 必要に応じて他のスタイリングプロパティ */
+}
+
+.new_user {
+  width: 200px;
+  height: 100px;
+}
+
+.submit-button {
+  background-color: #E3D7C0; /* ボタンの背景色 */
+  border-radius: 10px;
+  color: gray; /* ボタンのテキスト色 */
+  border: 2px solid gray; /* ボタンのボーダー色と太さ */
+  padding: 10px 20px; /* ボタンのパディング */
+  font-size: 1em; /* テキストのサイズ */
+  cursor: pointer; /* カーソルをポインタに */
+  margin-top: 20px; /* ボタンの上のスペース（必要に応じて調整） */
+  display: block; /* ボタンをブロックレベル要素として表示 */
+  width: 100px; /* ボタンの幅を100pxに設定 */
+  box-sizing: border-box; /* ボーダーとパディングを含む要素の全体幅を維持 */
+  margin-left: auto; /* 左側の自動マージンで右に押しやる */
+  margin-right: auto; /* 右側の自動マージンで左に押しやる */
+  transition: background-color 0.4s ease;
+}
+
+.submit-button:hover {
+  background-color: #d1c4a9; /* ホバー時のボタンの背景色 */
+}
+
+
+/* フォーム全体のスタイルが必要な場合 */
+form {
+  text-align: center; /* 中央揃えに */
+}
