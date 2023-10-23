@@ -1,5 +1,6 @@
 .login-container {
   /* これにより、子要素を縦と横の中央に配置できます。 */
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
