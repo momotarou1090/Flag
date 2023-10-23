@@ -17,9 +17,9 @@
 /* フォームの入力フィールド全体に適用されるスタイル */
 .transparent-input {
   border-radius: 0; /* 角の丸みをなくす */
-  background-color: transparent; /* 背景を透明に */
+  
   border: none; /* 枠線をなくす */
-  border-bottom: 5px solid #000000; /* 下線のみを表示 */
+  border-bottom: 1px solid #000000; /* 下線のみを表示 */
   outline: none; /* クリックしたときの枠線をなくす */
   padding: 8px 0; /* パディングでテキスト位置を調整 */
   margin: 8px 0; /* 余白を設定 */
@@ -30,17 +30,11 @@
 
 /* 入力フィールドがフォーカスされたときのスタイル */
 .transparent-input:focus {
-  -webkit-appearance: none; /* iOSでのデフォルトスタイルをオフにする */
-  -moz-appearance: none; /* Firefoxでのスタイルをリセット */
-  appearance: none; /* 標準のスタイルをリセット */
-  border-bottom: 5px solid #555555; /* フォーカス時の下線を強調 */
+  border-bottom: 2px solid #555555; /* フォーカス時の下線を強調 */
 }
 
 /* プレースホルダテキストのスタイル（オプション）*/
 .transparent-input::placeholder {
-  -webkit-appearance: none; /* iOSでのデフォルトスタイルをオフにする */
-  -moz-appearance: none; /* Firefoxでのスタイルをリセット */
-  appearance: none; /* 標準のスタイルをリセット */
   color: #a9a9a9; /* プレースホルダテキストの色を設定 */
 }
 
