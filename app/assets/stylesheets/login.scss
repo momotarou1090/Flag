@@ -17,7 +17,7 @@
 /* フォームの入力フィールド全体に適用されるスタイル */
 .transparent-input {
   border-radius: 0; /* 角の丸みをなくす */
-  
+  background-color: transparent; /* 背景を透明に */
   border: none; /* 枠線をなくす */
   border-bottom: 1px solid #000000; /* 下線のみを表示 */
   outline: none; /* クリックしたときの枠線をなくす */
