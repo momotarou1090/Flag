@@ -5,5 +5,8 @@
   <% if tweet.image.attached? %>
     <%= image_tag tweet.image %>
   <% end %>
-  <%= link_to '削除', tweet, method: :delete, data: { confirm: '本当に削除しますか？' } %>
+
+  <% if user_signed_in? && current_user == tweet.user %>
+    <%= link_to '削除', tweet, method: :delete, data: { confirm: '本当に削除しますか？' } %>
+  <% end %>
 </div>
