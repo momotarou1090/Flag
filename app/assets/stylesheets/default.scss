@@ -2,3 +2,34 @@ body {
   margin: 0;
   background-color: #E3D7C0;
 }
+
+body a {
+  text-decoration: none;
+  color: #000;
+}
+
+body a:hover {
+  text-decoration: underline;  /* オプション: ホバー時にアンダーラインを表示する場合 */
+}
+
+.header-container {
+  background-color: #41ad53;/* Twitterの青色 */
+  padding: 10px 0;
+  text-align: center;
+}
+
+.header-link {
+  color: white; /* リンクの文字色 */
+  margin: 0 15px; /* 両側のマージン */
+  font-weight: bold;
+  text-decoration: none; /* アンダーラインを消す */
+  transition: color 0.3s;
+}
+
+.header-link:hover {
+  color: #e6f3ff; /* ホバー時の色 */
+}
+
+.main-content {
+  padding: 20px; /* 必要に応じて調整 */
+}

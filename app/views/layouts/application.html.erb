@@ -11,17 +11,20 @@
   </head>
 
   <body>
-    <% unless current_page?(new_user_session_path) %>
-      <% if user_signed_in? %>
-        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-        <%= link_to "みんなの投稿", tweets_path %>
-        <%= link_to "投稿する", new_tweet_path %>
-        <%= link_to "マイプロフィール", user_path(current_user) %> <!-- これが追加される部分 -->
-      <% else %>
-        <%= link_to "Sign Up", new_user_registration_path %>
-        <%= link_to "Login", new_user_session_path %>
+    <div class="header-container">
+      <% unless current_page?(new_user_session_path) %>
+        <% if user_signed_in? %>
+          <%= link_to "みんなの投稿", tweets_path, class: "header-link" %>
+          <%= link_to "マイプロフィール", user_path(current_user), class: "header-link" %>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-link" %>
+        <% else %>
+          <%= link_to "会員登録", new_user_registration_path, class: "header-link" %>
+          <%= link_to "ログイン", new_user_session_path, class: "header-link" %>
+        <% end %>
       <% end %>
-    <% end %>
-    <%= yield %>
-    </body>
+    </div>
+    <div class="main-content">
+      <%= yield %>
+    </div>
+  </body>
 </html>

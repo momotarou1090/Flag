@@ -1,12 +1,12 @@
 <!-- _tweet.html.erb -->
 <div class="tweet">
-  <p><%= link_to tweet.user.name, user_path(tweet.user) %></p>
-  <p><%= tweet.content %></p>
+  <p class="tweet-user"><%= link_to tweet.user.name, user_path(tweet.user), class: "tweet-user-name" %></p>
+  <p class="tweet-content"><%= tweet.content %></p>
   <% if tweet.image.attached? %>
-    <%= image_tag tweet.image %>
+    <div class="tweet-image"><%= image_tag tweet.image %></div>
   <% end %>
 
   <% if user_signed_in? && current_user == tweet.user %>
-    <%= link_to '削除', tweet, method: :delete, data: { confirm: '本当に削除しますか？' } %>
+    <%= link_to '削除', tweet, method: :delete, data: { confirm: '本当に削除しますか？' }, class: "tweet-delete-link" %>
   <% end %>
 </div>

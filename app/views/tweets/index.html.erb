@@ -1,11 +1,12 @@
-<%= form_for @tweet do |f| %>
-  <%= f.label :content %>
-  <%= f.text_area :content %>
-  <%= f.label :image %>
-  <%= f.file_field :image %>
-  <%= f.submit "Post" %>
-<% end %>
-<div id="tweets">
-  <%= render @tweets %>
-  <%= paginate @tweets %>
+<div class="twitter-container">
+  <div class="tweet-form">
+    <%= form_for @tweet do |f| %>
+      <%= f.text_area :content, placeholder: "何を考えている？", class: "tweet-textarea" %>
+      <%= f.submit "投稿", class: "tweet-submit" %>
+    <% end %>
+  </div>
+  <div id="tweets">
+    <%= render @tweets %>
+    <%= paginate @tweets %>
+  </div>
 </div>

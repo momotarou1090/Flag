@@ -25,7 +25,7 @@ class User < ApplicationRecord
   end
   
 
-  validates :role, presence: true, inclusion: { in: %w[influencer fan], message: "%{value} is not a valid role" }
+  # validates :role, presence: true, inclusion: { in: %w[influencer fan], message: "%{value} is not a valid role" }
 
   def influencer?
     role == 'influencer'

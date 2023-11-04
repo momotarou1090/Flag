@@ -1,3 +1,90 @@
 // Place all the styles related to the tweets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.twitter-container {
+  max-width: 600px; /* レイアウトの最大幅を設定 */
+  margin: 0 auto; /* 中央寄せ */
+  padding: 20px;
+}
+
+.tweet-form {
+  margin-bottom: 20px;
+}
+
+.tweet-textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #41ad53;
+  min-height: 100px; /* テキストエリアの最小の高さを設定 */
+  resize: vertical; /* 縦方向のリサイズのみを許可 */
+}
+
+.tweet-submit {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #41ad53;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.tweet-submit:hover {
+  background-color: #41ad53;
+}
+
+
+
+
+
+.tweet {
+  background-color: #E3D7C0;
+  border: 1px solid #41ad53;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.tweet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.tweet-user-name {
+  font-weight: bold;  /* これで太字になります */
+  font-size: 16px;  /* 必要に応じてサイズを調整 */
+  color: black;
+  text-decoration: none;
+}
+
+.tweet-delete-link {
+  color: #666;
+  font-size: 10px;  /* これでテキストを小さくします */
+  border: 1px solid #e1e8ed;
+  padding: 3px 6px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.tweet-delete-link:hover {
+  background-color: #f5f5f5;
+}
+
+.tweet-content {
+  margin-top: 10px;
+}
+
+.tweet-image-container {
+  margin-top: 10px;
+}
+
+.tweet-image {
+  max-width: 100%;
+  border-radius: 5px;
+}
