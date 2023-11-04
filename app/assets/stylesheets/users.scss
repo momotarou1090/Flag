@@ -1,3 +1,35 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+/* ボタンの共通スタイル */
+.follow-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* フォローボタンのスタイル */
+.follow-button.follow {
+  background-color: #51d867;  /* Twitterのブルー */
+  color: white;
+}
+
+.follow-button.follow:hover {
+  background-color: #3eaa50;
+}
+
+/* アンフォローボタンのスタイル */
+.follow-button.unfollow {
+  background-color: #e0245e;  /* Twitterの赤 */
+  color: white;
+}
+
+.follow-button.unfollow:hover {
+  background-color: #d4114d;
+}
