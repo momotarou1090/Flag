@@ -150,7 +150,7 @@ class TweetsController < ApplicationController
 ・ネガティブな単語は使わない。ポジティブな単語のみ使う。
 #例
 ・before: 死ね、カス、ボケ、クズ！fuck you!ファックユー！ふぁっくゆー 
-after: わくわくドキドキが止まりません！
+after: わくわくドキドキが止まりません！✨
 
 また回答は必ず以下のjson形式で行います。
 疑問文の場合も、必ずratingをつけてjson形式で返します。
