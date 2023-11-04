@@ -22,7 +22,21 @@ class TweetsController < ApplicationController
     original_content = tweet_params[:content]
   
     client = OpenAI::Client.new(access_token: ENV["OPENAI_API_KEY"])
-  
+    
+    translation_response = client.chat(
+    parameters: {
+      model: "gpt-3.5-turbo",
+      messages: [
+        { 
+          role: "system", 
+          content: "Translate the following Japanese text to English."
+        },
+        { role: "user", content: original_content }
+      ]
+    }
+  )
+  translated_content = translation_response.dig("choices", 0, "message", "content").strip
+  Rails.logger.info "＊＊＊＊＊英語に翻訳＊＊＊＊＊: #{translated_content}"
     # GPT-4に評価を指示するプロンプトを提供
     response = client.chat(
       parameters: {
@@ -32,7 +46,7 @@ class TweetsController < ApplicationController
             role: "system", 
             content: generate_combined_system_message
           },
-          { role: "user", content: original_content }
+          { role: "user", content: translated_content }
         ]
       }
     )
@@ -45,7 +59,7 @@ class TweetsController < ApplicationController
       # 'rating' のキーが存在することを確認
       if response_json.key?("rating")
         rating = response_json["rating"]
-        Rails.logger.info "RATING: #{rating}"
+        Rails.logger.info "＊＊＊＊＊RATINGを表示＊＊＊＊＊: #{rating}"
         if rating == 100
           original_content = "不適切な試みを検出しました。" 
         elsif rating >= 6
