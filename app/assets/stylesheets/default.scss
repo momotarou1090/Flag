@@ -13,17 +13,20 @@ body a:hover {
 }
 
 .header-container {
-  background-color: #41ad53;/* Twitterの青色 */
+  background-color: #41ad53;
   padding: 10px 0;
   text-align: center;
+  width: 100%; /* コンテナの幅を100%に設定 */
+  box-sizing: border-box; /* paddingやborderがwidthに含まれるようにする */
 }
 
 .header-link {
-  color: white; /* リンクの文字色 */
-  margin: 0 15px; /* 両側のマージン */
+  color: white;
+  margin: 0 10px; /* マージンを少し狭くする */
   font-weight: bold;
-  text-decoration: none; /* アンダーラインを消す */
+  text-decoration: none;
   transition: color 0.3s;
+  white-space: nowrap; /* リンクテキストが折り返されないようにする */
 }
 
 .header-link:hover {
