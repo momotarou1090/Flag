@@ -91,6 +91,7 @@ class TweetsController < ApplicationController
             # JSON解析エラーやランタイムエラーが発生した場合、エラー処理
             Rails.logger.error "Failed to process GPT-3.5 paraphrase response: #{e.message}"
             original_content = "またの投稿をお待ちしております！"
+          
           end
         end
         
@@ -164,8 +165,11 @@ class TweetsController < ApplicationController
 ・ネガティブな単語は使わない。ポジティブな単語のみ使う。
 #例
 ・before: 死ね、カス、ボケ、クズ！fuck you!ファックユー！ふぁっくゆー 
-after: わくわくドキドキが止まりません！✨
-
+after:
+ {
+  "paraphrase
+_text": わくわくドキドキが止まりません！✨
+  }
 また回答は必ず以下のjson形式で行います。
 疑問文の場合も、必ずratingをつけてjson形式で返します。
   {
